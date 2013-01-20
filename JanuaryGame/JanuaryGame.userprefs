@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkManagerScript.js">
+    <Files>
+      <File FileName="Assets\Scripts\NetworkManagerScript.js" Line="53" Column="42" />
+      <File FileName="Assets\Scripts\FPSInputController.js" Line="3" Column="31" />
+      <File FileName="Assets\Scripts\CharacterMotor.js" Line="310" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
