@@ -181,9 +181,6 @@ function Awake () {
 }
 
 private function UpdateFunction () {
-
-if(networkView.isMine){
-
 	// We copy the actual velocity into a temporary variable that we can manipulate.
 	var velocity : Vector3 = movement.velocity;
 	
@@ -308,11 +305,6 @@ if(networkView.isMine){
 		// Support moving platform rotation as well:
         movingPlatform.activeGlobalRotation = tr.rotation;
         movingPlatform.activeLocalRotation = Quaternion.Inverse(movingPlatform.activePlatform.rotation) * movingPlatform.activeGlobalRotation; 
-	}
-	}
-	else
-	{
-	enabled = false;
 	}
 }
 
