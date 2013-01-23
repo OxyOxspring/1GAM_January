@@ -332,8 +332,10 @@ function FixedUpdate () {
 }
 
 function Update () {
+if(networkView.isMine){
 	if (!useFixedUpdate)
 		UpdateFunction();
+		}
 }
 
 private function ApplyInputVelocityChange (velocity : Vector3) {	
