@@ -1,5 +1,6 @@
 var playerPrefabEvil:GameObject;
 var playerPrefabGood:GameObject;
+var script:Chat;
 var spawn1:GameObject;
 var spawn2:GameObject;
 var spawn3:GameObject;
@@ -85,15 +86,19 @@ break;
 //Messages
 function OnServerInitialized(){
 	Debug.Log("Server Initialised!");
+	script.enabled = true;
 	spawnHunter();
+	
 }
 
 function OnConnectedToServer(){
 	spawnPlayer();
+	script.enabled = true;
 }
 
 function OnDisconnectedFromServer(){
 	Application.LoadLevel(0);
+	script.enabled = false;
 }
 
 function OnPlayerDisconnected(player: NetworkPlayer){
