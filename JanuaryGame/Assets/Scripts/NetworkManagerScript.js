@@ -1,6 +1,11 @@
 var playerPrefabEvil:GameObject;
 var playerPrefabGood:GameObject;
-var spawnObject:GameObject;
+var spawn1:GameObject;
+var spawn2:GameObject;
+var spawn3:GameObject;
+var spawn4:GameObject;
+var spawn5:GameObject;
+private var spawnObject:GameObject;
 var gameName:String = "OxyOxspringNetworking";
 
 private var refreshing:boolean = false;
@@ -23,7 +28,7 @@ function Start(){
 
 function startServer(){
 Network.InitializeServer(32,25001,!Network.MovePublicAddress);
-MasterServer.RegisterHost(gameName,"Hunter Or Hunter", "Local Game");
+MasterServer.RegisterHost(gameName,"Hunter Or Hunter", "Join Local Game");
 }
 
 function refreshHostList(){
@@ -42,15 +47,39 @@ function Update(){
 }
 
 function spawnPlayer(){
+chooseSpawn();
 	Network.Instantiate(playerPrefabGood, spawnObject.transform.position, Quaternion.identity,0);
 	playerPrefabGood.camera.enabled = false;
 	playerPrefabEvil.camera.enabled = false;
 }
 
 function spawnHunter(){
+chooseSpawn();
 Network.Instantiate(playerPrefabEvil, spawnObject.transform.position, Quaternion.identity,0);
 	playerPrefabEvil.camera.enabled = false;
 	playerPrefabGood.camera.enabled = false;
+}
+
+function chooseSpawn(){
+var randomnumber = Random.Range(1,5);
+switch (randomnumber) {
+case 1:
+spawnObject = spawn1;
+break;
+case 2:
+spawnObject = spawn2;
+break;
+case 3:
+spawnObject = spawn3;
+break;
+case 4:
+spawnObject = spawn4;
+break;
+case 5:
+spawnObject = spawn5;
+break;
+}
+
 }
 
 //Messages
