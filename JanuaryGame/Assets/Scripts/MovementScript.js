@@ -1,16 +1,25 @@
-var speed:int = 5;
-var gravity = 5;
-private var cc:CharacterController;
+private var health:int;
 
 function Start () {
-cc = GetComponent(CharacterController);
+health = 100;
 }
 
 function Update () {
 if(networkView.isMine){
-cc.Move(Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, -gravity * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime));
+Debug.Log(health);
 }
 else{
 enabled = false;
 }
+}
+
+function OnTriggerEnter(){
+var newCol:Vector3 = Vector3(1,0,0);
+networkView.RPC("SetColor",RPCMode.AllBuffered,newCol);
+}
+
+@RPC
+function SetColor(newColor:Vector3){
+health -= 10;
+renderer.material.color = Color(newColor.x,newColor.y,newColor.z,1);
 }
