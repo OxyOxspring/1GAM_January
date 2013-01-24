@@ -1,6 +1,9 @@
-function OnTriggerEnter(){
+function OnTriggerEnter(object:Collider){
 Debug.Log("Hello");
+if(object.gameObject.name == "EvilFish(Clone)")
+{
 var newCol:Vector3 = Vector3(1,0,0);
+}
 networkView.RPC("SetColor",RPCMode.AllBuffered,newCol);
 }
 
