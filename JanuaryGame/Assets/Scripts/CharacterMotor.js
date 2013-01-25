@@ -2,6 +2,7 @@
 #pragma implicit
 #pragma downcast
 
+var splash : AudioSource;
 // Does this script currently respond to input?
 var canControl : boolean = true;
 
@@ -430,6 +431,7 @@ private function ApplyGravityAndJumping (velocity : Vector3) {
 			jumping.lastStartTime = Time.time;
 			jumping.lastButtonDownTime = -100;
 			jumping.holdingJumpButton = true;
+			splash.Play();
 			
 			// Calculate the jumping direction
 			if (TooSteep())
