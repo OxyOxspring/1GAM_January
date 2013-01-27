@@ -155,17 +155,27 @@ function DeadFish(){
 networkView.RPC("updateStringDead",RPCMode.AllBuffered,stringToEdit);
 }
 
+function EscapeFish(){
+networkView.RPC("updateStringEscape",RPCMode.AllBuffered,stringToEdit);
+}
+
 @RPC
 function updateString(str:String){
 displayString = str + " has joined the game!";
 }
 
+
 @RPC
 function updateStringAttack(str:String){
-displayString = "The shark has bitten " + str + "! SWIM FOR YOUR LIFE!";
+displayString = "The shark has bitten " + str + "!";
 }
 
 @RPC
 function updateStringDead(str:String){
 displayString = str + " has been devoured! Oh dear!";
+}
+
+@RPC
+function updateStringEscape(str:String){
+displayString = str + " has escaped from the shark...";
 }

@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkManagerScript.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SharkColliderScript.js">
     <Files>
-      <File FileName="Assets\Scripts\NetworkManagerScript.js" Line="167" Column="1" />
+      <File FileName="Assets\Scripts\SharkColliderScript.js" Line="64" Column="18" />
+      <File FileName="Assets\Scripts\FishScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkManagerScript.js" Line="1" Column="1" />
       <File FileName="Assets\Chat\Chat.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

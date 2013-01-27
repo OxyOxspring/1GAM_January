@@ -9,6 +9,8 @@ var networking:GameObject;
 
 private var count:int;
 
+private var escapeCounter:int;
+
 
 function OnTriggerEnter(object:Collider){
 
@@ -29,6 +31,7 @@ chomp.Play();
 function Start () {
 health = 100;
 count = 0;
+escapeCounter = 0;
 bloodstream.Stop();
 networking = GameObject.Find("NetworkManager");
 }
@@ -50,6 +53,15 @@ count = 0;
 }
 count++;
 
+if(escapeCounter >= 550)
+{
+networking.SendMessage("EscapeFish");
+escapeCounter = 0;
+health = 100;
+networkView.RPC("bloodoff",RPCMode.AllBuffered);
+chase.Stop();
+}
+escapeCounter++;
 }
 
 if(health <= 0)
@@ -106,4 +118,9 @@ function fadeOut(){
 @RPC
 function blood(){
 bloodstream.Play();
+}
+
+@RPC
+function bloodoff(){
+bloodstream.Stop();
 }
