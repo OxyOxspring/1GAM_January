@@ -48,9 +48,10 @@
      <Compile Include="Assets\GUITextureScript.js" />
      <Compile Include="Assets\Scripts\CharacterMotor.js" />
      <Compile Include="Assets\Scripts\FPSInputController.js" />
-     <Compile Include="Assets\Scripts\FishColliderScript.js" />
+     <Compile Include="Assets\Scripts\FishScript.js" />
      <Compile Include="Assets\Scripts\MovementScript.js" />
      <Compile Include="Assets\Scripts\NetworkManagerScript.js" />
+     <Compile Include="Assets\Scripts\SharkColliderScript.js" />
      <Compile Include="Assets\Scripts\SphereScript.js" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
   </ItemGroup>

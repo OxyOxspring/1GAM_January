@@ -8,6 +8,8 @@ var spawn4:GameObject;
 var spawn5:GameObject;
 private var spawnObject:GameObject;
 var gameName:String = "OxyOxspringNetworking";
+private var stringToEdit : String = "Input Username";
+private var displayString : String = "";
 
 private var refreshing:boolean = false;
 private var hostData:HostData[];
@@ -48,6 +50,7 @@ function Update(){
 }
 
 function spawnPlayer(){
+networkView.RPC("updateString",RPCMode.AllBuffered,stringToEdit);
 chooseSpawn();
 	Network.Instantiate(playerPrefabGood, spawnObject.transform.position, Quaternion.identity,0);
 	playerPrefabGood.camera.enabled = false;
@@ -55,6 +58,7 @@ chooseSpawn();
 }
 
 function spawnHunter(){
+networkView.RPC("updateString",RPCMode.AllBuffered,stringToEdit);
 chooseSpawn();
 Network.Instantiate(playerPrefabEvil, spawnObject.transform.position, Quaternion.identity,0);
 	playerPrefabEvil.camera.enabled = false;
@@ -116,12 +120,14 @@ function OnMasterServerEvent(mse:MasterServerEvent){
 //GUI
 function OnGUI(){
 	if(!Network.isClient && !Network.isServer){
-		if(GUI.Button(Rect(btnX,btnY,btnW,btnH),"Start Server"))
+	stringToEdit = GUI.TextField(Rect(btnX,btnY,btnW,btnH/5),stringToEdit,16);
+		
+		if(GUI.Button(Rect(btnX,btnY * 1.5,btnW,btnH),"Start Server"))
 		{
 			Debug.Log("Starting Server");
 			startServer();
 		}
-		if(GUI.Button(Rect(btnX,btnY * 1.2 + btnH,btnW,btnH),"Refresh Hosts"))
+		if(GUI.Button(Rect(btnX,btnY * 1.6 + btnH,btnW,btnH),"Refresh Hosts"))
 		{
 			Debug.Log("Refreshing");
 			refreshHostList();
@@ -135,4 +141,31 @@ function OnGUI(){
 			}
 		}
 	}
+	else
+	{
+	GUI.Label(Rect(btnX-30,btnY-40,btnW*4,btnH/5),displayString);
+	}
+}
+
+function AttackedFish(){
+networkView.RPC("updateStringAttack",RPCMode.AllBuffered,stringToEdit);
+}
+
+function DeadFish(){
+networkView.RPC("updateStringDead",RPCMode.AllBuffered,stringToEdit);
+}
+
+@RPC
+function updateString(str:String){
+displayString = str + " has joined the game!";
+}
+
+@RPC
+function updateStringAttack(str:String){
+displayString = "The shark has bitten " + str + "! SWIM FOR YOUR LIFE!";
+}
+
+@RPC
+function updateStringDead(str:String){
+displayString = str + " has been devoured! Oh dear!";
 }

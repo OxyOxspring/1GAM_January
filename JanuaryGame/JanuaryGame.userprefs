@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FishColliderScript.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkManagerScript.js">
     <Files>
-      <File FileName="Assets\Scripts\FishColliderScript.js" Line="32" Column="1" />
-      <File FileName="Assets\Scripts\CharacterMotor.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SphereScript.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NetworkManagerScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkManagerScript.js" Line="167" Column="1" />
+      <File FileName="Assets\Chat\Chat.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
