@@ -65,7 +65,7 @@ function OnGUI(){
 if(networkView.isMine){
 	var stringy:String= "";
 	stringy = "Current Hunger: " + health;
-	GUI.Label(Rect(Screen.width - 160, 30, 150,50), stringy);
+	GUI.Label(Rect(Screen.width - 160, 30, 120,50), stringy);
 	
     alpha += fadeDir * fadeSpeed * Time.deltaTime;  
     alpha = Mathf.Clamp01(alpha);   

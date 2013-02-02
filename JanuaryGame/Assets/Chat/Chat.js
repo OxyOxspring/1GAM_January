@@ -35,7 +35,7 @@ function OnGUI ()
 	GUI.skin = skin;
 	
 	//if (GUILayout.Button(showChat ? "Hide Chat" : "Display Chat"))
-	if (GUI.Button(new Rect(Screen.width-100, Screen.height-30, 90, 20), showChat ? "Hide Chat" : "Display Chat"))
+	if (GUI.Button(new Rect(Screen.width-160, Screen.height-50, 120,20), showChat ? "Hide Chat" : "Display Chat"))
 	{
 		// Focus first element
 		if (showChat)
